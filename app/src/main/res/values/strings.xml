@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GojekAssignment</string>
+    <string name="activity_title">Trending</string>
 </resources>
