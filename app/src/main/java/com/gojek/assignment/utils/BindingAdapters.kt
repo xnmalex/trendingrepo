@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
@@ -31,6 +32,11 @@ fun setStopShimmer(view: ShimmerFrameLayout, isLoading:Boolean) {
 @BindingAdapter("isLanguageVisible")
 fun setLanguageVisible(view: LinearLayout, language:String?) {
     view.visibility = if (TextUtils.isEmpty(language))  View.GONE else View.VISIBLE
+}
+
+@BindingAdapter("isDescVisible")
+fun setDescVisible(view: TextView, description:String?) {
+    view.visibility = if (TextUtils.isEmpty(description))  View.GONE else View.VISIBLE
 }
 
 @BindingAdapter("languageColor")

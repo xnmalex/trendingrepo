@@ -11,6 +11,7 @@ data class Repositories(
     @field:PrimaryKey
     val name: String,
     val avatar: String,
+    val description: String,
     @field:Nullable
     val language: String?,
     val languageColor:String?,

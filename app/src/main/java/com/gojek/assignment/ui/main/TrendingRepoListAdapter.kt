@@ -1,6 +1,5 @@
 package com.gojek.assignment.ui.main
 
-import android.util.Log
 import android.util.SparseBooleanArray
 import android.view.LayoutInflater
 import android.view.View

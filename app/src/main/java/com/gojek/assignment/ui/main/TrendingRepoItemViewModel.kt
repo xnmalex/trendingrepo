@@ -8,6 +8,7 @@ class TrendingRepoItemViewModel : BaseViewModel() {
     private val author = MutableLiveData<String>()
     private val name = MutableLiveData<String>()
     private val avatar = MutableLiveData<String>()
+    private val description = MutableLiveData<String>()
     private val languageColor = MutableLiveData<String>()
     private val language = MutableLiveData<String>()
     private val stars = MutableLiveData<Integer>()
@@ -17,6 +18,7 @@ class TrendingRepoItemViewModel : BaseViewModel() {
         author.value = repo.author
         name.value = repo.name
         avatar.value = repo.avatar
+        description.value = repo.description
         languageColor.value = repo.languageColor
         language.value = repo.language
         stars.value = repo.stars
@@ -33,6 +35,10 @@ class TrendingRepoItemViewModel : BaseViewModel() {
 
     fun getRepoAvatar():MutableLiveData<String>{
         return avatar
+    }
+
+    fun getRepoDescription():MutableLiveData<String>{
+        return description
     }
 
     fun getRepoLanguageColor():MutableLiveData<String>{

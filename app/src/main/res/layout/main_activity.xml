@@ -48,6 +48,33 @@
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
+        <LinearLayout
+            android:id="@+id/no_internet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@mipmap/nointernet_connection" />
+
+            <Button
+                android:id="@+id/tryAgain_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/try_again"/>
+
+        </LinearLayout>
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -62,6 +89,7 @@
                 app:adapter="@{viewModel.getTrendingRepoListAdapter()}" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

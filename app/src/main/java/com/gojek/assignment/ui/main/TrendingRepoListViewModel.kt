@@ -31,6 +31,7 @@ class TrendingRepoListViewModel(private val repositoriesDao: RepositoriesDao) : 
         loadTrendingRepos()
     }
 
+
      fun loadTrendingRepos(){
         subscription = Observable.fromCallable { repositoriesDao.all }
             .concatMap {
