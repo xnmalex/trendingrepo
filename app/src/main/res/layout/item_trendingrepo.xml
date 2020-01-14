@@ -63,10 +63,12 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/extraInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="6dp">
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
