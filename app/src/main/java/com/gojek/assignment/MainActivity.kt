@@ -25,11 +25,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val decorator = DividerItemDecoration(applicationContext, LinearLayoutManager.VERTICAL)
         binding = DataBindingUtil.setContentView(this, R.layout.main_activity)
-        if (savedInstanceState == null) {
-//            supportFragmentManager.beginTransaction()
-//                .replace(R.id.container, TrendingRepoFragment.newInstance())
-//                .commitNow()
-        }
         decorator.setDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.separator)!!)
         binding.repoListView.addItemDecoration(decorator)
 
@@ -38,6 +33,12 @@ class MainActivity : AppCompatActivity() {
                 errorMessage -> if(errorMessage != null) showError(errorMessage) else hideError()
         })
         binding.viewModel = viewModel
+
+        if (savedInstanceState == null) {
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.container, TrendingRepoFragment.newInstance())
+//                .commitNow()
+        }
 
     }
 

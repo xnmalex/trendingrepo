@@ -31,14 +31,14 @@ class TrendingRepoListViewModel(private val repositoriesDao: RepositoriesDao) : 
         loadTrendingRepos()
     }
 
-    fun loadTrendingRepos(){
+     fun loadTrendingRepos(){
         subscription = Observable.fromCallable { repositoriesDao.all }
             .concatMap {
                     dbRepoList ->
                 if(dbRepoList.isEmpty())
                     trendingRepoApi.getTrendingRepo().concatMap {
                             apiPostList -> repositoriesDao.insertAll(*apiPostList.toTypedArray())
-                        Observable.just(dbRepoList)
+                        Observable.just(apiPostList)
                     }
                 else
                     Observable.just(dbRepoList)
@@ -61,10 +61,10 @@ class TrendingRepoListViewModel(private val repositoriesDao: RepositoriesDao) : 
     private fun onRetrieveRepoListFinish(){
         loadingVisibility.value = View.GONE
         isLoading.set(false)
+        //trendingRepoListAdapter.updateRepoList(repoList)
     }
 
     private fun onRetrieveRepoListSuccess(repoList:List<Repositories>){
-        Log.v("debug","size"+ repoList.size)
         trendingRepoListAdapter.updateRepoList(repoList)
     }
 
