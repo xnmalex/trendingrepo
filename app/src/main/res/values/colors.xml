@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="repoNameAuthorColor">#52575C</color>
     <color name="divider">#e8e8e8</color>
+    <color name="background">#dddddd</color>
 </resources>
